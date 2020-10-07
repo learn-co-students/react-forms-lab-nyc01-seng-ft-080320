@@ -23,7 +23,8 @@ class TwitterMessage extends React.Component {
           id="message"
           value={this.state.message}
           onChange={(event) => this.handleChange(event)}
-        />
+          />
+          {this.state.charsLeft}
         <p>{this.state.charsLeft} chars left..</p>
       </div>
     );
