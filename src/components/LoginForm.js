@@ -1,25 +1,30 @@
 import React from "react";
 
 class LoginForm extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {};
-  }
 
   render() {
     return (
-      <form>
+      <form onChange={this.props.handleLogin}>
         <div>
           <label>
             Username
-            <input id="username" name="username" type="text" />
+            <input 
+              id="username" 
+              name="username" 
+              type="text"
+              values = {this.props.username} 
+            />
           </label>
         </div>
         <div>
           <label>
             Password
-            <input id="password" name="password" type="password" />
+            <input 
+              id="password" 
+              name="password" 
+              type="password" 
+              values = {this.props.password} 
+            />
           </label>
         </div>
         <div>
