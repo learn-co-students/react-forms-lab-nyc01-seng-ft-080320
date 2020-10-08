@@ -1,6 +1,8 @@
 import React from "react";
 
 class LoginForm extends React.Component {
+
+  
  state={
    username:'',
    password:''   
@@ -9,14 +11,16 @@ class LoginForm extends React.Component {
  clickHandler = (e) =>{
  
   this.setState({[e.target.name]:[e.target.value]})
+  console.log(e.target.name, e.target.value)
  }
 
  submitHandler =(e) =>{
-   e.preventDefault();
-   if (!this.state.username || !this.state.password) return
-  
-   this.props.handleLogin(e.target)
-   
+  e.preventDefault()
+  console.log(e)
+
+  if (!this.state.username || !this.state.password) return
+
+  this.props.handleLogin(this.state)
  }
 
 
