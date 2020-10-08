@@ -3,23 +3,27 @@ import React from "react";
 class TwitterMessage extends React.Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
-      charCount: 0,
+      charCount: '',
       message: "",
     };
+
   }
 
   handleCharCount = (event) => {
-    let currentCount = event.target.value.length
+    let currentCount = this.props.maxChars - event.target.value.length
     let currentMessage = event.target.value
     
-    currentCount+1 >= this.props.maxChars ? this.setState({}) : this.setState({
-      charCount:event.target.value.length,
-      message: currentMessage
-    })
-    console.log(this.state)
+    currentCount <= 0 ? 
+      this.setState({
+        charCount: currentCount,
+      }) : this.setState({
+        charCount: currentCount,
+        message: currentMessage,
+      })
   }
+
 
   render() {
     return (
